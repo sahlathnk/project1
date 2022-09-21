@@ -1,0 +1,145 @@
+body{
+
+font-family: 'Caladea', serif;
+}
+
+/*** Navbar ***/
+.dropdown-item {
+
+}
+.nav-item{
+letter-spacing: .09em;
+font-family: 'Abril Fatface', cursive;
+}
+
+.my-footer {
+width:100%;
+background-color:silver;
+position:fixed;
+bottom:0;
+}
+.my-footer p{
+     font-size:12px;
+    letter-spacing:0.1em;
+    padding-top:5px;
+}
+/*** Category ***/
+
+.my-row-class{
+    padding-top:5px;
+}
+.my-row-class .mx-auto{
+
+}
+.cat-image{
+    width:1275px;
+    height:350px;
+    align:center;
+}
+.cat-name{
+    text-align:center;
+    font-size:20px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+}
+.cat-desc{
+    text-align:center;
+}
+.banner-image{
+     width:1275px;
+     height:350px;
+
+}
+.banner-title{
+    text-align:center;
+    font-size:25px;
+    text-transform:uppercase;
+    letter-spacing:0.15em;
+}
+.banner-desc{
+    text-align:justify;
+    font-size:15px;
+    letter-spacing:0.15em;
+}
+
+.my_bottom_margin{
+    margin-bottom:15px;
+
+}
+.card_image{
+    padding:5px;
+
+}
+.card-title{
+    text-transform:uppercase;
+    font-size:15px;
+    letter-spacing:0.2em;
+}
+
+/*** product ***/
+.product_row{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+
+.product_row mx-auto{
+    font-size:15px;
+
+}
+
+.prod_name{
+    font-size:20px;
+    text-transform:uppercase;
+    letter-spacing:0.2em;
+    padding-top:15px;
+    padding-bottom:10px;
+    font-weight:bold;
+}
+
+.prod_desc{
+    padding-right:20px;
+}
+
+.prod_desc_title{
+    font-size:25px;
+    text-decoration:underline;
+}
+.prod-image{
+    border-width:2px;
+    border-style:solid;
+    border-color:tan;
+}
+/*** search ***/
+.search_text{
+    padding-top:20px;
+
+}
+
+/*** cart ***/
+.custom-table{
+    min-width:400px;
+    font-size:14px;
+}
+
+.custom-table-head{
+    font-weight:normal;
+    text-transform:uppercase;
+    letter-spacing:.2em;
+    background-color:tan;
+}
+
+.cart_review_line{
+    font-size:18px;
+}
+.custom_a{
+    text-decoration:none;
+
+}
+
+.custom_icon{
+    color:silver;
+}
+
+.custom-button{
+    margin-top:5px;
+}

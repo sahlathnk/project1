@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+  {% if category %}
+    {{ category.description|truncatewords:155 }}
+  {% else %}
+      Welcome to ABC Online Stores. Buy whatever you want!
+  {% endif %}
+{% endblock %}
+
+{% block title %}
+  {% if category %}
+    {{ category.name}}-ABC Stores
+  {% else %}
+     See our New Collections-ABC Stores
+  {% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if category %}
+    <div>
+        <div class="row my-row-class">
+            <div class="mx-auto">
+            <p>
+                <a href="{% url 'eshop_app:allProdCat' %}">All Products</a>
+            </p>
+            </div>
+        </div>
+    </div>
+  {% endif %}
+<div class="mx-auto">
+    {% if category %}
+    <img class="cat-image" src="{{category.image.url}}" alt="{{category.name}}" >
+</div>
+    <br>
+    <div>
+        <h1 class="cat-name">{{category.name}}</h1>
+        <p class="cat-desc">{{category.description}}</p>
+    </div>
+    {% else %}
+    <div class="container-fluid">
+     <img class="banner-image"src="{% static 'img/banner.png' %}" alt="Our Products">
+    </div>
+    <br>
+    <div>
+        <h1 class="banner-title">Our Products</h1>
+        <p class="banner-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+    {% endif %}
+<div class="container">
+    <div class="row mx_auto">
+        {% for product in products.object_list %}
+    <div  class="my_bottom_margin  col-9 col-sm-12 col-md-3 col-md-12 col-lg-3">
+        <center><div class="card" style="width:18rem;">
+        <a href="{{product.get_url}}"><img class="card-img-top card_image" src="{{product.image.url}}" alt="{{product.name}}"  width="200" height="300"></a>
+    <div class="card-body">
+        <h4 class="card-title">{{product.name}}</h4>
+        <p class="card-text">{{product.price}}</p>
+        </div>
+        </div></center><br>
+    </div>
+        {% endfor %}
+    <div class="mx-auto">
+        {% if products.paginator.num_pages > 1 %}
+        <div class="text-center">
+            {% for pg in products.paginator.page_range %}
+            <a href="?page={{pg}}" class="btn btn-light btn-sm {% if products.number == pg %} active {% endif %}">{{pg}}</a>
+            {% endfor %}
+        </div>
+        {% endif %}<hr>
+    </div>
+    <br>
+    </div>
+</div>
+{% endblock %}
+
